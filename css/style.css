@@ -6,7 +6,7 @@
 /* @import url(http://fonts.googleapis.com/css?family=Asap:400,400italic,700,700italic); */
 /* @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic); */
 
-/* I prefer Lato and "Open Sans", I think */
+/* I prefer Lato and "Open Sans" */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -107,7 +107,8 @@ em { font-style: italic; }
 a:link {
 	color: rgb(54, 130, 80);
 	font-weight: bold;
-	-webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;
+	-webkit-transition-property: color, border; -moz-transition-property: color, border; transition-property: color, border;
+	-webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; transition-duration: 0.3s;
 	border-bottom: 1px solid rgb(54, 130, 80);
 	text-decoration: none;
 }
@@ -178,13 +179,7 @@ button:active,
 
 /* Header */
 header {
-	/*background: #333 url(http://subtlepatterns.com/patterns/zigzag.png);
-	background: #333 url(http://subtlepatterns.com/patterns/triangles.png);
-	background: #333 url(http://subtlepatterns.com/patterns/black_denim.png);
-	background: #333 url(http://subtlepatterns.com/patterns/dark_brick_wall.png);
-	background: #333 url(http://subtlepatterns.com/patterns/dark_Tire.png);
-	background: #333 url(http://subtlepatterns.com/patterns/tactile_noise.png); */
-	background: #222 url(http://subtlepatterns.com/patterns/dark_wood.png);
+	background: #222 url(../img/dark_wood.png);
 	border-bottom: 2px groove #666;
 	-moz-box-shadow: 0 0 2px rgba(0,0,0,0.6); -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.6); box-shadow: 0 0 2px rgba(0,0,0,0.6);
 	color: #fff;
@@ -274,11 +269,12 @@ td {
 	font-size: 0.75em;
 	cursor: pointer;
 }
-td.no-results {
+.no-results {
 	padding: 1.5em 1em;
 	font-size: 1em;
 	cursor: auto;
 }
+.no-results i { display: block; }
 tr:hover td {
 	background: -webkit-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 30%, rgba(190,223,191,0) 70%, rgba(190,223,191,0.7) 100%);
 	background: -moz-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 30%, rgba(190,223,191,0) 70%, rgba(190,223,191,0.7) 100%);
@@ -355,7 +351,7 @@ td.J {
 	background: rgb(190,223,191);
 	color: rgb(34, 70, 70);
 	text-shadow: 1px 1px 1px rgb(215, 248, 216);
-	opacity: 0.9;
+	opacity: 0.94;
 	-webkit-transition-property: top; -moz-transition-property: top; transition-property: top;
 	-webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; transition-duration: 0.3s;
 }
@@ -458,6 +454,7 @@ fieldset > .input-with-suggestions {
 	border: 1px dotted rgb(114, 150, 150);
 	overflow: hidden; /* clear floats */
 	line-height: 1.3em;
+	font-size: 1em;
 	/* text-shadow: 1px 1px 1px #f0f0f0; */
 	/*text-shadow: 1px 1px 1px #222;*/
 	text-shadow: 1px 1px 1px rgb(215,248,216);
@@ -472,6 +469,7 @@ label > b,
 .checklist > b {
 	display: block;
 	line-height: 1.3em;
+	font-size: 1em;
 	/*max-width: 49%;*/
 	min-height: 38px;
 	padding: 0 0 1px;
@@ -557,10 +555,7 @@ label input[type="radio"],
 label input[type="checkbox"] {
 	float: none;
 	margin-right: 8px;
-	display: inline-block;
-	vertical-align: top;
-	zoom: 1;
-	*display: inline;
+	display: inline;
 }
 .geographic label input {
 	margin-right: 5px;
@@ -581,75 +576,29 @@ fieldset .button:active {
 	border-color: rgb(165,198,166);
 }
 
+/* Search again link */
+.search-again:link,
+.search-again:visited {
+	position: fixed;
+	right: 1em;
+	bottom: 0;
+	max-width: 140px;
+	width: 20%;
+	border: 1px solid rgb(34, 70, 70);
+	border-bottom: 0;
+	padding: 5px 8px 4px;
+	font-size: 0.85em;
+	background: rgb(190,223,191);
+	text-shadow: 1px 1px 1px rgb(215, 248, 216);
+}
+.search-again i {
+	display: block;
+}
 
+.search-again.pre-search {
+	display: none;
+}
 
-/* Search controls (old)
-fieldset {
-	background-color: #333;
-	color: #fff;
-	border: 0;
-	/* border: 2px solid #333; *//*
-	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-	margin: 10px 0;
-	padding: 10px 0 20px 14px;
-}
-fieldset legend {
-	background-color: #333;
-	color: #fff;
-	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
-	font-weight: bold;
-	padding: 7px 15px 8px;
-	font-size: 1.25em;
-	margin-left: 0.75em;
-}
-fieldset > label,
-fieldset > .radio {
-	display: inline-block;
-	background-color: #555;
-	vertical-align: top;
-	zoom: 1;
-	*display: inline;
-	width: 45%;
-	padding: 10px;
-	margin: 0 8px 10px 0;
-	overflow: hidden; /* clear floats *//*
-}
-label > b,
-.radio > b {
-	display: block;
-	float: left;
-	max-width: 49%;
-	min-height: 38px;
-	padding-right: 10px;
-}
-.radio .choices {
-	width: 47%;
-	float: right;
-}
-.radio label {
-	white-space: nowrap;
-	display: block;
-}
-label > b > i,
-.radio > b > i {
-	display: block;
-}
-label > input[type="text"] {
-	width: 49%;
-}
-p.buttons {
-	display: block;
-	width: 100%;
-	padding: 20px 0;
-}
-label input,
-label select {
-	float: right;
-}
-label input[type="radio"] {
-	float: none;
-}
-*/
 
 /**
  * Chosen CSS (http://harvesthq.github.com/chosen/)
@@ -658,7 +607,10 @@ label input[type="radio"] {
 .chzn-container {
 	font-size: 13px;
 	position: relative;
-	display: block;
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+	*display: inline;
 	text-align: left;
 }
 .chzn-container .chzn-drop {
@@ -666,13 +618,21 @@ label input[type="radio"] {
 	border: 1px solid #aaa;
 	border-top: 0;
 	position: absolute;
-	top: 29px;
-	left: 0;
+	top: 100%;
+	left: -9999px;
 	-webkit-box-shadow: 0 4px 5px rgba(0,0,0,.15);
 	-moz-box-shadow   : 0 4px 5px rgba(0,0,0,.15);
-	-o-box-shadow     : 0 4px 5px rgba(0,0,0,.15);
 	box-shadow        : 0 4px 5px rgba(0,0,0,.15);
 	z-index: 1010;
+	width: 100%;
+	-moz-box-sizing   : border-box;
+	-ms-box-sizing    : border-box;
+	-webkit-box-sizing: border-box;
+	-khtml-box-sizing : border-box;
+	box-sizing        : border-box;
+}
+.chzn-container.chzn-with-drop .chzn-drop {
+  left: 0;
 }
 /* @end */
 
@@ -864,6 +824,7 @@ label input[type="radio"] {
 	height: 13px;
 	font-size: 1px;
 	background: url(../img/chosen-sprite.png) right top no-repeat;
+	border-bottom: 0;
 }
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
 	background-position: right -11px;
@@ -1018,6 +979,16 @@ label input[type="radio"] {
 }
 /* @end */
 
+/* @group Retina compatibility */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi)  {
+	.chzn-rtl .chzn-search input, .chzn-container-single .chzn-single abbr, .chzn-container-single .chzn-single div b, .chzn-container-single .chzn-search input, .chzn-container-multi .chzn-choices .search-choice .search-choice-close, .chzn-container .chzn-results-scroll-down span, .chzn-container .chzn-results-scroll-up span {
+		background-image: url(../img/chosen-sprite@2x.png) !important;
+		background-repeat: no-repeat !important;
+		background-size: 52px 37px !important;
+	}
+}
+/* @end */
+
 
 /**
  * Responsive adjustments
@@ -1115,13 +1086,25 @@ label input[type="radio"] {
 		width: 270px !important;
 	}
 }
+
+/* Switch to narrow-width layout (only one search control per line, smaller overall font size, etc.) */
 @media (max-width: 650px) {
 	body {
 		font-size: 88%;/* 16 x 0.875 = 14 */
 	}
+	header h1 {
+		width: 35%;
+		padding-right: 10px;
+	}
+	header .fr,
+	header .en { padding-left: 5px; }
+	header .en { width: 95px; }
 	fieldset {
 		text-align: center;
-		padding-bottom: 10px;
+		padding: 0 0 10px;
+	}
+	fieldset h2 {
+		margin-left: 0;
 	}
 	fieldset > label,
 	fieldset > .radio,
@@ -1166,7 +1149,83 @@ label input[type="radio"] {
 		*display: inline;
 		float: none;
 		margin: 0 10px;
+		padding: 0;
+		text-indent: 0;
+	}
+	.search-again:link {
+		right: 0.5em;
+		width: 100px;
+		font-size: 0.75em;
 	}
 }
 
+@media (max-width: 600px) {
+	header h1 {
+		padding-left: 15px;
+	}
+	header .fr {
+		width: 108px;
+	}
+	#results-wrap {
+		width: 100%;
+	}
+}
 
+/* Switch to "full-screen", very narrow width layout */
+@media (max-width: 520px) {
+	header {
+		font-size: 70%;
+	}
+	fieldset {
+		font-size: 50%;
+	}
+	header h1 {
+		width: 30%;
+		font-size: 1.25em;
+		padding-right: 5px;
+	}
+	header .fr {
+		padding-left: 10px;
+		width: 24%;
+	}
+	header .en {
+		padding-left: 5px;
+		width: 20%;
+	}
+	#services-search {
+		width: 100%;
+		margin: 10px 0 0;
+	}
+	fieldset,
+	fieldset h2 {
+		border-radius: 0;
+	}
+	.logo {
+		display: block;
+		position: absolute;
+		top: 0.5em;
+		right: 0.5em;
+		z-index: 2;
+		background-image: url(../img/reseau-network-logo-small.png);
+		background-size: 46px 95px;
+		width: 46px;
+		height: 95px;
+	}
+	.search-again {
+		padding: 3px 7px;
+	}
+}
+
+/* "Retina" mobile styles */
+@media 
+(max-width: 520px) and (-webkit-min-device-pixel-ratio: 2),
+(max-width: 520px) and (   min--moz-device-pixel-ratio: 2),
+(max-width: 520px) and (     -o-min-device-pixel-ratio: 2/1),
+(max-width: 520px) and (        min-device-pixel-ratio: 2),
+(max-width: 520px) and (                min-resolution: 192dpi),
+(max-width: 520px) and (                min-resolution: 2dppx) {
+	.logo {
+		background-image: url(../img/reseau-network-logo.png);
+		background-size: 46px 95px;
+	}
+}
