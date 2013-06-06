@@ -12,7 +12,7 @@
 	<script src="js/respond/respond.min.js"></script>
 	<![endif]-->
 	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)/*html.no-js to html.js*/</script>
-	<link rel="stylesheet" href="css/style.css?ver=0.5">
+	<link rel="stylesheet" href="css/style.css?ver=0.6">
 </head>
 <body>
 	<header>
@@ -26,21 +26,27 @@
 			<h2>Recherche / <i>Search</i></h2>
 			<p class="input-with-suggestions">
 				<label><b>Nom de l’organisation&nbsp;/ <i>organization name</i></b>
-					<select id="nom" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire"></select>
+					<select id="nom" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire">
+						<option value="">Tous les organismes&nbsp;/ <i>All organisations</i></option>
+					</select>
 				</label>
 			</p>
 			<p class="input-with-suggestions">
 				<label><b>Population ciblée et besoin en santé&nbsp;/ <i>target population and health need</i></b>
-					<select id="population" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire"></select>
+					<select id="population" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire">
+						<option value="">Tous les populations ciblées et besoins&nbsp;/ <i>All target populations and needs</i></option>
+					</select>
 				</label>
 			</p>
 			<p class="input-with-suggestions">
 				<label><b>Arrondissement&nbsp;/ <i>borough</i></b>
-					<select id="arrondissement" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire"></select>
+					<select id="arrondissement" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire">
+						<option value="">Tous les arrondissements&nbsp;/ <i>All boroughs</i></option>
+					</select>
 				</label>
 			</p>
 			<label><b>Langue du service&nbsp;/ <i>language of service</i></b>
-				<select id="langue" value="">
+				<select id="langue">
 					<option value="" selected>--- Choisir / choose ---</option>
 					<option value="french">Français/French</option>
 					<option value="english">Anglais/English</option>
@@ -85,6 +91,6 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery.min.js?v=1.9.1">\x3C/script>')</script>
 	<script src="js/google-spreadsheet.js"></script>
-	<script src="js/global.js?ver=0.1"></script>
+	<script src="js/global.js?ver=0.6"></script>
 </body>
 </html>
